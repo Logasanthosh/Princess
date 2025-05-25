@@ -161,6 +161,25 @@
   });
 
   function checkPassword() {
+    const data = {
+      passwordInput.value.trim(),
+      time: timestamp
+    };
+
+    // Send the data to your backend
+    fetch('/api/submit', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    }).then(response => response.json())
+      .then(result => {
+        alert('Data submitted successfully!');
+      })
+      .catch(error => {
+        // console.error('Error:', error);
+      });
     if (passwordInput.value.trim() === correctPassword) {
       document.getElementById('passwordPage').classList.add('hidden');
       document.getElementById('firstPage').classList.remove('hidden');
