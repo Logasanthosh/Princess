@@ -87,12 +87,12 @@
 <body>
 
   <div id="frontPage" class="page">
-        <h1>Click here for surprise</h1>
-        <button id="surpriseBtn" onclick="goBackToPassword()>Click Me!</button>
-        <audio id="audio">
-            <source src="remo.mp3" type="audio/mp3">
-        </audio>
-    </div>
+    <h1>Click here for surprise</h1>
+    <button id="surpriseBtn" onclick="goBackToPassword()">Click Me!</button>
+    <audio id="audio" controls>
+        <source src="remo.mp3" type="audio/mp3">
+    </audio>
+</div>
 
 <!-- ❤️ Floating Hearts -->
 <span class="heart-float" style="left: 10%;">💖</span>
@@ -118,7 +118,7 @@
 <iframe src="remo.ogg" allow="autoplay" id="audio" style="display: none"></iframe> -->
 
 <!-- 🔐 Password Page -->
-<div id="passwordPage" class="page">
+<div id="passwordPage" class="page hidden">
   <h2>Unaku mattum than indha password theriyum 😜</h2>
   <input type="password" id="passwordInput" placeholder="Inga inga inga paaru...">
   <br>
