@@ -86,6 +86,15 @@
 </head>
 <body>
 
+  <div class="container">
+        <h1>Click here for surprise</h1>
+        <button id="surpriseBtn">Click Me!</button>
+        <audio id="audio" controls>
+            <source src="remo.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
 <!-- ❤️ Floating Hearts -->
 <span class="heart-float" style="left: 10%;">💖</span>
 <span class="heart-float" style="left: 30%; animation-delay: 2s;">💘</span>
@@ -106,8 +115,8 @@
   Your browser does not support the audio element.
 </audio> -->
 
-  <iframe src="remo.mp3" allow="autoplay" id="audio" style="display: none"></iframe>
-<iframe src="remo.ogg" allow="autoplay" id="audio" style="display: none"></iframe>
+<!--   <iframe src="remo.mp3" allow="autoplay" id="audio" style="display: none"></iframe>
+<iframe src="remo.ogg" allow="autoplay" id="audio" style="display: none"></iframe> -->
 
 <!-- 🔐 Password Page -->
 <div id="passwordPage" class="page">
@@ -153,6 +162,15 @@
 
 <!-- 🎈 JavaScript Logic -->
 <script>
+
+  document.getElementById('surpriseBtn').addEventListener('click', function() {
+            var audio = document.getElementById('audio');
+            audio.style.display = 'block';
+            audio.play().catch(function(error) {
+                console.log('Autoplay failed:', error);
+            });
+        });
+  
   const correctPassword = "Mm sari";
   const passwordInput = document.getElementById('passwordInput');
   const submitButton = document.getElementById('submitButton');
