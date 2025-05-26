@@ -161,7 +161,7 @@
   });
 
   function checkPassword() {
-    if (passwordInput.value.trim() === correctPassword) {
+    if (passwordInput.value.trim().toLowerCase() === correctPassword.toLowerCase()) {
       document.getElementById('passwordPage').classList.add('hidden');
       document.getElementById('firstPage').classList.remove('hidden');
     } else {
