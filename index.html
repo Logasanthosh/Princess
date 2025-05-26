@@ -87,9 +87,9 @@
 <body>
 
   <div id="frontPage" class="page">
-    <h1>Click here surprise</h1>
+    <h1>Click here for surprise</h1>
     <button id="surpriseBtn" onclick="goBackToPassword()">Click Me!</button>
-    <audio id="audio" controls>
+    <audio id="audio" controls hidden>
         <source src="remo.mp3" type="audio/mp3">
     </audio>
 </div>
@@ -122,7 +122,7 @@
   <h2>Unaku mattum than indha password theriyum 😜</h2>
   <input type="password" id="passwordInput" placeholder="Inga inga inga paaru...">
   <br>
-  <button id="submitButton" onclick="goBackToPassword()">Seekiram type pannu!</button>
+  <button id="submitButton" onclick="checkPassword()">Seekiram type pannu!</button>
 </div>
 
 <!-- ❌ Wrong Password Hint -->
