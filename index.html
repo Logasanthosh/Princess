@@ -180,8 +180,37 @@
       : "Seekiram type pannu";
   });
 
+  // ========== LOGIN ATTEMPT LOGGING ==========
+  // Replace this URL with your Google Apps Script Web App URL
+  const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx_CdsxQc0mx0VrLC7AFG2Dg_Kwi6zAgw56YC8eZWvW5za6_z1mu_QoO0afkYw52udPMQ/exec';
+
+  function logLoginAttempt(success) {
+    const data = {
+      timestamp: new Date().toISOString(),
+      success: success,
+      userAgent: navigator.userAgent,
+      language: navigator.language,
+      screenSize: screen.width + 'x' + screen.height,
+      referrer: document.referrer || 'direct',
+      page: window.location.href
+    };
+
+    // Send to Google Apps Script (works from GitHub Pages!)
+    fetch(GOOGLE_SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    }).catch(err => console.log('Log skipped'));
+  }
+
   function checkPassword() {
-    if (passwordInput.value.trim().toLowerCase() === correctPassword.toLowerCase()) {
+    const isCorrect = passwordInput.value.trim().toLowerCase() === correctPassword.toLowerCase();
+
+    // Log the attempt (no password sent!)
+    logLoginAttempt(isCorrect);
+
+    if (isCorrect) {
       document.getElementById('passwordPage').classList.add('hidden');
       document.getElementById('firstPage').classList.remove('hidden');
     } else {

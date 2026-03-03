@@ -1,0 +1,12 @@
+{
+  "name": "princess-login-logger",
+  "version": "1.0.0",
+  "description": "Backend server to log login attempts securely",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
